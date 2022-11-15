@@ -15,7 +15,7 @@ RUN apt-get -y install git python3 openssh-client \
     && mkdir -p -m 0600 ~/.ssh && ssh-keyscan github.com >> ~/.ssh/known_hosts
 # Install Python packages
 COPY requirements.txt .
-RUN --mount=type=ssh,id=github pip install --no-cache-dir -q -r requirements.txt
+RUN pip install --no-cache-dir -q -r requirements.txt
 
 FROM stage1 AS stage3
 # Copy requirements directory
