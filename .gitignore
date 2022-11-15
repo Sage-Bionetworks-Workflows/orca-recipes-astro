@@ -3,3 +3,5 @@
 airflow_settings.yaml
 astro
 __pycache__
+.ipynb_checkpoints
+.ipynb
