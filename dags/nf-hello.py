@@ -7,7 +7,7 @@ from sagetasks.nextflowtower.utils import TowerUtils
 
 
 @dag(
-    schedule_interval="@daily",
+    schedule_interval=None,
     start_date=datetime(2022, 11, 11),
     catchup=False,
     default_args={
