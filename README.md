@@ -46,7 +46,9 @@ Contact
 The Astronomer CLI is maintained with love by the Astronomer team. To report a bug or suggest a change, reach out to our support team: https://support.astronomer.io/
 
 
-## Deploy via airflow
+## Deploy non-production airflow
+
+Although this is the non-standard way to deploy Airflow, this is purely for prototype purposes to show the value add of Airflow
 
 1. Create an ubuntu instance on AWS. Instances settings:
     * Instance type: `t3a.xlarge` or better.
