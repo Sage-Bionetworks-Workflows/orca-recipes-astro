@@ -44,3 +44,21 @@ Contact
 =======
 
 The Astronomer CLI is maintained with love by the Astronomer team. To report a bug or suggest a change, reach out to our support team: https://support.astronomer.io/
+
+
+## Deploy via airflow
+
+1. Create an ubuntu instance on AWS. Instances settings:
+    * Instance type: `t3a.xlarge` or better.
+    * Volume space: 1TB or greater
+    * Security group. More information on [AWS VPN user guide](https://sagebionetworks.jira.com/wiki/spaces/IT/pages/1705246745/AWS+Client+VPN+User+Guide).
+        * Inbound
+            * 22 TCP 52.44.61.21/32
+            * 5432 TCP 52.44.61.21/32
+            * 8080 TCP 52.44.61.21/32
+        * outbound
+            * All Traffic
+1. Follow instructions [here](https://docs.docker.com/engine/install/ubuntu/) to install `docker-ce`
+1. Deploying Airflow
+    1. Using `docker-compose.yaml` - Instructions for Running Airflow in Docker on the [Airflow site](https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html).
+    1. Follow instructions above using the `astro` cli.
