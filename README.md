@@ -55,9 +55,9 @@ Although this is the non-standard way to deploy Airflow, this is purely for prot
     * Volume space: 1TB or greater
     * Security group. More information on [AWS VPN user guide](https://sagebionetworks.jira.com/wiki/spaces/IT/pages/1705246745/AWS+Client+VPN+User+Guide).
         * Inbound
-            * 22 TCP 52.44.61.21/32
-            * 5432 TCP 52.44.61.21/32
-            * 8080 TCP 52.44.61.21/32
+            * 22 (SSH) TCP 52.44.61.21/32
+            * 5432 (Postgres) TCP 52.44.61.21/32
+            * 8080 (Custom TCP) TCP 52.44.61.21/32
         * outbound
             * All Traffic
 1. Follow instructions [here](https://docs.docker.com/engine/install/ubuntu/) to install `docker-ce`
