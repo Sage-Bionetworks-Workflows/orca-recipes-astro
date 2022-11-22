@@ -15,7 +15,7 @@ from sagetasks.nextflowtower.utils import TowerUtils
     },
     tags=["nextflow_tower"],
 )
-def nf_hello_dag():
+def nf_validate_dag():
     @task(multiple_outputs=True)
     def open_tower_workspace():
         """
@@ -43,12 +43,15 @@ def nf_hello_dag():
         tower_utils.open_workspace(workspace_id)
         tower_utils.launch_workflow(
             compute_env_id="1QX5bol8rZHBZkTAEIvQts",
-            pipeline="nextflow-io/hello",
-            run_name="nf-hello_test",
+            pipeline="Sage-Bionetworks-Workflows/nf-validate",
+            revision="bb81bf2",
+            run_name="nf-validate-demo",
+            profiles=["docker"],
+            user_secrets=["SYNAPSE_AUTH_TOKEN"],
         )
 
     tower_utils = open_tower_workspace()
     launch_tower_workflow(tower_utils["tower_utils"], "253119656982040")
 
 
-nf_hello_dag = nf_hello_dag()
+nf_validate_dag = nf_validate_dag()
