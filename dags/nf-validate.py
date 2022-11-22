@@ -24,7 +24,7 @@ def nf_validate_dag():
         Returns:
             dict: TowerUtils class instance within dictionary for easy variable passing
         """
-        tower_token = os.environ["TOWER_ACCESS_TOKEN"]
+        tower_token = os.environ["TOWER_ACCESS_TOKEN"] # TODO configure secrets instead of using env variables
         client_args = TowerUtils.bundle_client_args(
             tower_token, platform="sage", debug_mode=False
         )
@@ -44,10 +44,9 @@ def nf_validate_dag():
         tower_utils.launch_workflow(
             compute_env_id="1QX5bol8rZHBZkTAEIvQts",
             pipeline="Sage-Bionetworks-Workflows/nf-validate",
-            revision="bb81bf2",
-            run_name="nf-validate-demo",
+            revision="main",
             profiles=["docker"],
-            user_secrets=["SYNAPSE_AUTH_TOKEN"],
+            user_secrets=["SYNAPSE_AUTH_TOKEN"], # TODO need to get a workspace secret in the HTAN tower workspace that has more access - don't have permission to create one
         )
 
     tower_utils = open_tower_workspace()
