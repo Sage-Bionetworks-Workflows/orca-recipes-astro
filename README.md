@@ -64,3 +64,9 @@ Although this is the non-standard way to deploy Airflow, this is purely for prot
 1. Deploying Airflow
     1. Using `docker-compose.yaml` - Instructions for Running Airflow in Docker on the [Airflow site](https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html).
     1. Follow instructions above using the `astro` cli.
+
+## License
+
+This repository is licensed under the [Apache License 2.0](LICENSE).
+
+Copyright 2022 Sage Bionetworks
